@@ -35,4 +35,3 @@ void timerAUpmode()
   TACTL = TASSEL_2 + MC_1;   
 }
 
-
