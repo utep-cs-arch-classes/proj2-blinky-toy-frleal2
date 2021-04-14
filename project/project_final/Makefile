@@ -14,13 +14,13 @@ all: button.elf
 assembly: buttonA.elf
 
 #additional rules for files
-button.elf: ${COMMON_OBJECTS}wd_inthandlr.o led.o buzzer.o ledStates.o scales.o switches.o bbmain.o libTimer.a
+button.elf: ${COMMON_OBJECTS}wd_inthandlr.o led.o buzzer.o ledStates.o scales.o switches.o bbmain.o ../lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
 load: button.elf
 	mspdebug rf2500 "prog button.elf"
 
-buttonA.elf: ${COMMON_OBJECTS} wd_inthandlr.o led.o buzzer.o st.o scales.o switches.o bbmain.o libTimer.a
+buttonA.elf: ${COMMON_OBJECTS} wd_inthandlr.o led.o buzzer.o st.o scales.o switches.o bbmain.o ../lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
 loadA: buttonA.elf
